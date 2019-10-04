@@ -15,8 +15,13 @@ class ItemService {
         return itemRepository.findAll()
     }
 
-    fun saveItem(item: Item): Item {
-        return itemRepository.save(item)
+    /**
+     * 扩展为支持item list的情形
+     */
+    fun saveItem(itemList: List<Item>) {
+        itemList.forEach {
+            itemRepository.save(it)
+        }
     }
 
 

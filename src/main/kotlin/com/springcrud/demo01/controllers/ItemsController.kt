@@ -1,4 +1,5 @@
 package com.springcrud.demo01.controllers
+
 import com.springcrud.demo01.entities.Item
 import com.springcrud.demo01.services.ItemService
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,8 +15,8 @@ class ItemsController {
     lateinit var itemService: ItemService
 
     @PostMapping("/item")
-    fun createItem(@RequestBody item: Item): ResponseEntity<Item> {
-        return ResponseEntity(itemService.saveItem(item), HttpStatus.CREATED)
+    fun createItem(@RequestBody itemList: List<Item>) {
+        itemService.saveItem(itemList)
     }
 
     @GetMapping("/item")
@@ -24,8 +25,8 @@ class ItemsController {
     }
 
     @PutMapping("/item")
-    fun updateItem(@RequestBody item: Item): ResponseEntity<Item> {
-        return ResponseEntity(itemService.saveItem(item), HttpStatus.ACCEPTED)
+    fun updateItem(@RequestBody itemList: List<Item>) {
+        itemService.saveItem(itemList)
     }
 
     @DeleteMapping("/item/{id}")
