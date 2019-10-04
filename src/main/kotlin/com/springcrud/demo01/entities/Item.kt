@@ -12,7 +12,7 @@ data class Item (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Int,
 
-    var name: String
+    var name: String?
 
 
 )
