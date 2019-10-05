@@ -24,7 +24,6 @@ class ItemService {
         }
     }
 
-
     fun removeItem(itemId: Int) {
         itemRepository.deleteById(itemId)
     }
