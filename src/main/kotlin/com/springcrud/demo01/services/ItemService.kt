@@ -24,6 +24,12 @@ class ItemService {
         }
     }
 
+    fun updateItem(itemList: List<Item>) {
+        itemList.forEach {
+            itemRepository.save(it)
+        }
+    }
+
     fun removeItem(itemId: Int) {
         itemRepository.deleteById(itemId)
     }
